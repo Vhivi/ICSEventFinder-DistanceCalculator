@@ -1,0 +1,8 @@
+# Virtual Environment
+.env/
+
+# Workspace Config
+.vscode/
+
+# Sensitive Data
+*.ics
