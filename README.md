@@ -39,10 +39,8 @@ How to use it
 * **Example 1:**
 
    ```shell
-   python script.py
+   python main.py
    ```
-
-* **Example 2:**
 
 Project Structure
 -----------------
