@@ -8,9 +8,9 @@
 # Then, the program will display the events found in the *.ics file, their
 # number, and calculate the distance traveled during the period of the found
 # events.
-# Author:
+# Author: Vhivi (https://github.com/Vhivi)
 # Creation Date (dd/mm/yyyy): 31/03/2024
-# Version:
+# Version: 1.0.0
 # Python 3.10.11
 
 ################################################################
