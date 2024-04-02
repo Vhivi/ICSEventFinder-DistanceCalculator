@@ -34,6 +34,8 @@ END_TIME = datetime(2023, 12, 31, 23, 59, 59, tzinfo=timezone.utc)
 # Replace the number between the parentheses with the one-way distance for the
 # roundtrip you want to calculate no matter the unit
 ROUNDTRIP = (32.7) * 2
+# Replace by the unit of the distance you want to calculate (km, miles, etc.)
+DISTANCE_UNIT = "km"
 
 ################################################################
 # Function Declarations
@@ -127,7 +129,7 @@ def main():
 
     # Multiple events by the round trip to obtain the total distance
     total_distance = len(matching_events) * ROUNDTRIP
-    print(f"Total distance: {total_distance} km")
+    print(f"Total distance: {total_distance} {DISTANCE_UNIT}")
 
 
 if __name__ == "__main__":
