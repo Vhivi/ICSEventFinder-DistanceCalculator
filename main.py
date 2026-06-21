@@ -21,12 +21,10 @@ def get_events(cal):
             dtstart = component.get("dtstart").dt
             dtend = component.get("dtend").dt
             summary = component.get("summary")
-            try:
-                if dtstart <= END_TIME and dtend >= START_TIME:
-                    if SEARCH_TERM.lower() in summary.lower():
-                        matching_events.append(component)
-            except TypeError:
-                pass
+
+            summary = str(component.get("summary") or "")
+            if dtstart <= END_TIME and dtend >= START_TIME and SEARCH_TERM.lower() in summary.lower():
+                    matching_events.append(component)
 
     return matching_events
 
