@@ -10,13 +10,11 @@ DISTANCE_UNIT = "km"
 
 
 def open_file():
-    """Opens the file and returns the calendar object."""
     with open("calendar.ics", "rb") as f:
         return Calendar.from_ical(f.read())
 
 
 def get_events(cal):
-    """Returns a list of events that match the search term."""
     matching_events = []
     for component in cal.walk():
         if component.name == "VEVENT":
