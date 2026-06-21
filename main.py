@@ -35,14 +35,14 @@ def get_events(cal):
                 continue
             if SEARCH_TERM.lower() not in summary.lower():
                 continue
-            matching_events.append(component)
+            matching_events.append((dtstart, component))
 
     return matching_events
 
 
 def main():
     cal = open_file()
-    matching_events = sorted(get_events(cal), key=lambda x: as_datetime(x.get("dtstart").dt))
+    matching_events = sorted(get_events(cal), key=lambda x: x[0])
     total_distance = len(matching_events) * ROUNDTRIP
 
     print(f"Total events found: {len(matching_events)}")
