@@ -29,8 +29,13 @@ def get_events(cal):
             dtstart = as_datetime(component.get("dtstart").dt)
             dtend = as_datetime(component.get("dtend").dt)
             summary = str(component.get("summary") or "")
-            if dtstart and dtend and dtstart <= END_TIME and dtend >= START_TIME and SEARCH_TERM.lower() in summary.lower():
-                matching_events.append(component)
+            if not dtstart or not dtend:
+                continue
+            if dtstart > END_TIME or dtend < START_TIME:
+                continue
+            if SEARCH_TERM.lower() not in summary.lower():
+                continue
+            matching_events.append(component)
 
     return matching_events
 
