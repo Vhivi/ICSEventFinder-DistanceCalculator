@@ -1,8 +1,12 @@
 # Virtual Environment
 .env/
+.venv/
 
 # Workspace Config
 .vscode/
 
 # Sensitive Data
 *.ics
+
+# Python
+__pycache__/
